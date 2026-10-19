@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="popup-wrapper">
+    <!-- Header Extension -->
+    <div class="popup-header">
+      <div class="brand">
+        <img src="icons/icon48.png" class="brand-icon" alt="">
+        <span class="brand-title">Cus<b>YOU</b></span>
+      </div>
+      <span class="version-tag">Pro</span>
+    </div>
+
+    <!-- Tabs chính -->
+    <div class="nav-tabs">
+      <button class="nav-btn active" data-tab="tab-header">Header</button>
+      <button class="nav-btn" data-tab="tab-content">Content</button>
+      <button class="nav-btn" data-tab="tab-media">Audio Mode & EQ</button>
+      <button class="nav-btn" data-tab="tab-extra">Mở rộng</button>
+    </div>
+
+    <!-- 1. HEADER TAB (GIỮ NGUYÊN) -->
+    <div class="tab-page active" id="tab-header">
+      <div class="master-card">
+        <label class="switch-item master">
+          <div>
+            <div class="master-title">Đề xuất: Dọn gọn Header</div>
+            <div class="master-desc">Ẩn chuông, nút tạo video, voice search</div>
+          </div>
+          <input type="checkbox" id="group-header">
+        </label>
+      </div>
+
+      <details class="detail-accordion">
+        <summary class="accordion-trigger">
+          <span>Tùy chỉnh chi tiết nút Header</span>
+          <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+          </svg>
+        </summary>
+        <div class="field-card child-group" data-parent="group-header">
+          <label class="switch-item"><span>Nút tìm kiếm giọng nói</span><input type="checkbox"
+              id="hideVoiceSearch"></label>
+          <label class="switch-item"><span>Nút tạo video mới (+)</span><input type="checkbox"
+              id="hideHeaderCreate"></label>
+          <label class="switch-item"><span>Chuông thông báo</span><input type="checkbox"
+              id="hideHeaderNotifications"></label>
+          <label class="switch-item"><span>Ảnh đại diện tài khoản</span><input type="checkbox"
+              id="hideHeaderAvatar"></label>
+        </div>
+      </details>
+    </div>
+
+    <!-- 2. CONTENT TAB (BỔ SUNG ẨN ĐỀ XUẤT TRONG VIDEO/ENDSCREEN) -->
+    <div class="tab-page" id="tab-content">
+      <div class="master-card">
+        <label class="switch-item master">
+          <div>
+            <div class="master-title">Đề xuất: Dọn sạch thanh tác vụ</div>
+            <div class="master-desc">Ẩn chia sẻ, AI đặt câu hỏi, lưu, ủng hộ, ba chấm</div>
+          </div>
+          <input type="checkbox" id="group-actions">
+        </label>
+      </div>
+
+      <details class="detail-accordion">
+        <summary class="accordion-trigger">
+          <span>Chi tiết các nút dưới video</span>
+          <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+          </svg>
+        </summary>
+        <div class="field-card child-group" data-parent="group-actions">
+          <label class="switch-item"><span>Nút Thích và Không thích</span><input type="checkbox"
+              id="hideBtnLike"></label>
+          <label class="switch-item"><span>Nút Cảm ơn / Ủng hộ (Thanks)</span><input type="checkbox"
+              id="hideBtnThanks"></label>
+          <label class="switch-item"><span>Nút Chia sẻ</span><input type="checkbox" id="hideBtnShare"></label>
+          <label class="switch-item"><span>Nút Đặt câu hỏi (AI)</span><input type="checkbox" id="hideBtnAsk"></label>
+          <label class="switch-item"><span>Nút Lưu</span><input type="checkbox" id="hideBtnSave"></label>
+          <label class="switch-item"><span>Nút Ba chấm</span><input type="checkbox" id="hideBtnMore"></label>
+        </div>
+      </details>
+
+      <div class="master-card" style="margin-top: 6px;">
+        <label class="switch-item"><span>Tiêu đề video</span><input type="checkbox" id="hideTitle"></label>
+        <label class="switch-item master">
+          <div>
+            <div class="master-title">Đề xuất: Tối giản trang xem</div>
+            <div class="master-desc">Ẩn bình luận & video đề xuất bên cạnh</div>
+          </div>
+          <input type="checkbox" id="group-content">
+        </label>
+      </div>
+
+      <details class="detail-accordion">
+        <summary class="accordion-trigger">
+          <span>Chi tiết Kênh & Khung nội dung</span>
+          <svg class="chevron" viewBox="0 0 24 24">
+            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
+          </svg>
+        </summary>
+        <div class="field-card child-group" data-parent="group-content">
+          <label class="switch-item"><span>Avatar kênh</span><input type="checkbox" id="hideChannelAvatar"></label>
+          <label class="switch-item"><span>Tên kênh</span><input type="checkbox" id="hideChannelName"></label>
+          <label class="switch-item"><span>Số lượng người đăng ký</span><input type="checkbox"
+              id="hideChannelSubCount"></label>
+          <label class="switch-item"><span>Nút Tham gia (Join)</span><input type="checkbox" id="hideBtnJoin"></label>
+          <label class="switch-item"><span>Nút Đăng ký (Subscribe)</span><input type="checkbox"
+              id="hideBtnSubscribe"></label>
+          <label class="switch-item"><span>Mô tả video</span><input type="checkbox" id="hideDescription"></label>
+          <label class="switch-item"><span>Bình luận</span><input type="checkbox" id="hideComments"></label>
+          <label class="switch-item"><span>Video đề xuất bên cạnh</span><input type="checkbox" id="hideRelated"></label>
+          <label class="switch-item"><span>Ẩn playlist trong đề xuất</span><input type="checkbox"
+              id="hideRelatedPlaylists"></label>
+          <!-- Bổ sung tính năng mới -->
+          <label class="switch-item"
+            style="border-top: 1px dashed rgba(215, 192, 142, 0.25); margin-top: 4px; padding-top: 6px;">
+            <div>
+              <span style="color: #D7C08E; font-weight: 600;">Ẩn đề xuất trong video (Endscreen)</span>
+              <div style="font-size: 10px; color: #d1c3b2;">Xóa toàn bộ video, playlist & logo kênh hiện ở cuối video
+              </div>
+            </div>
+            <input type="checkbox" id="hideEndscreen">
+          </label>
+        </div>
+      </details>
+    </div>
+
+    <!-- 3. TAB AUDIO MODE (3 CHẾ ĐỘ) & VOLUME MASTER / EQ -->
+    <div class="tab-page" id="tab-media">
+      <!-- 3 Chế độ Audio Mode -->
+      <div class="field-card">
+        <div class="card-subtitle">Chế độ Audio Mode</div>
+        <div class="row-flex" style="margin-bottom: 6px;">
+          <span style="font-size: 12px; color: #d1c3b2;">Trạng thái:</span>
+          <select id="audioModeLevel" class="dropdown" style="flex: 1; margin-left: 10px;">
+            <option value="off">Tắt Audio Mode</option>
+            <option value="basic">1. Cơ bản (Giữ nguyên chất lượng video)</option>
+            <option value="advanced">2. Nâng cao (Khung HTML Logo CusYOU)</option>
+            <option value="saver">3. Tiết kiệm (HTML Logo + Ép 144p vĩnh viễn)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Volume Master -->
+      <div class="field-card" style="margin-top: 6px;">
+        <div class="card-subtitle">Volume Master (Tăng âm tối đa 1000%)</div>
+        <div class="cusyou-slider-container">
+          <div class="cusyou-slider-label">
+            <span>Mức âm lượng:</span>
+            <b id="volumeDisplay">100%</b>
+          </div>
+          <input type="range" id="volumeBoostSlider" class="cusyou-range-input" min="100" max="1000" step="5"
+            value="100">
+        </div>
+      </div>
+
+      <!-- Equalizer 10-Band Pro & Custom Profiles -->
+      <div class="field-card" style="margin-top: 6px;">
+        <div class="card-subtitle">Equalizer 10-Band (32Hz - 16kHz)</div>
+        <div class="row-flex" style="margin-bottom: 6px;">
+          <span style="font-size: 12px; color: #d1c3b2;">Profile:</span>
+          <select id="eqPresetSelect" class="dropdown" style="max-width: 180px;">
+            <optgroup label="Profile sẵn có">
+              <option value="flat">Mặc định (Flat)</option>
+              <option value="vinahouse">Vinahouse (Siêu Bass)</option>
+              <option value="edm">EDM / Club</option>
+              <option value="dj">DJ Dance</option>
+              <option value="pop">POP / Vocal</option>
+              <option value="lofi">Lofi Chill (Ấm & Mềm)</option>
+              <option value="rock">Rock / Metal</option>
+            </optgroup>
+            <optgroup label="Profile của bạn" id="customPresetOptGroup"></optgroup>
+          </select>
+        </div>
+
+        <!-- Quản lý lưu profile tùy chỉnh -->
+        <div class="row-flex" style="gap: 6px; margin-bottom: 8px;">
+          <input type="text" id="newPresetName" placeholder="Tên profile mới..." class="input-text"
+            style="flex: 1; text-align: left; padding: 4px 6px;">
+          <button type="button" id="btnSavePreset" class="btn-action">Lưu</button>
+          <button type="button" id="btnDeletePreset" class="btn-action btn-del"
+            title="Xóa profile đang chọn">Xóa</button>
+        </div>
+
+        <div class="eq-bars-container-10">
+          <div class="eq-col"><span class="eq-label">32</span><input type="range" class="eq-slider" data-band="0"
+              min="-12" max="12" step="1" value="0"></div>
+          <div class="eq-col"><span class="eq-label">64</span><input type="range" class="eq-slider" data-band="1"
+              min="-12" max="12" step="1" value="0"></div>
+          <div class="eq-col"><span class="eq-label">125</span><input type="range" class="eq-slider" data-band="2"
+              min="-12" max="12" step="1" value="0"></div>
+          <div class="eq-col"><span class="eq-label">250</span><input type="range" class="eq-slider" data-band="3"
+              min="-12" max="12" step="1" value="0"></div>
+          <div class="eq-col"><span class="eq-label">500</span><input type="range" class="eq-slider" data-band="4"
+              min="-12" max="12" step="1" value="0"></div>
+          <div class="eq-col"><span class="eq-label">1k</span><input type="range" class="eq-slider" data-band="5"
+              min="-12" max="12" step="1" value="0"></div>
+          <div class="eq-col"><span class="eq-label">2k</span><input type="range" class="eq-slider" data-band="6"
+              min="-12" max="12" step="1" value="0"></div>
+          <div class="eq-col"><span class="eq-label">4k</span><input type="range" class="eq-slider" data-band="7"
+              min="-12" max="12" step="1" value="0"></div>
+          <div class="eq-col"><span class="eq-label">8k</span><input type="range" class="eq-slider" data-band="8"
+              min="-12" max="12" step="1" value="0"></div>
+          <div class="eq-col"><span class="eq-label">16k</span><input type="range" class="eq-slider" data-band="9"
+              min="-12" max="12" step="1" value="0"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. EXTRA TAB -->
+    <div class="tab-page" id="tab-extra">
+      <div class="field-card">
+        <label class="switch-item">
+          <span>Thanh tìm kiếm ở dưới (Capsule)</span>
+          <input type="checkbox" id="enableBottomSearch">
+        </label>
+        <label class="switch-item">
+          <span>Ẩn toàn bộ thanh Header</span>
+          <input type="checkbox" id="hideHeader">
+        </label>
+      </div>
+
+      <div class="field-card">
+        <div class="card-subtitle">Tùy biến Logo (#logo-icon)</div>
+        <div class="seg-group">
+          <button type="button" class="seg-btn" data-val="premium-gold">Gold</button>
+          <button type="button" class="seg-btn" data-val="premium-red">Đỏ</button>
+          <button type="button" class="seg-btn" data-val="custom">Tải ảnh</button>
+          <button type="button" class="seg-btn" data-val="default">Mặc định</button>
+        </div>
+        <div id="logoUploadBox" style="display: none; margin-top: 8px;">
+          <label class="upload-area">
+            <span>Chọn ảnh logo (.webp, .png, .svg)...</span>
+            <input type="file" id="logoUploadInput" accept="image/*">
+          </label>
+        </div>
+      </div>
+
+      <div class="field-card">
+        <div class="card-subtitle">Tùy biến Mã vùng (#country-code)</div>
+        <div class="row-flex">
+          <span style="font-size: 12px; color: #d1c3b2;">Chế độ:</span>
+          <select id="regionSelect" class="dropdown">
+            <option value="auto">Mặc định</option>
+            <option value="hidden">Ẩn hoàn toàn</option>
+            <option value="custom">Tự viết chữ</option>
+          </select>
+        </div>
+        <div id="regionCustomBox" style="display: none; margin-top: 6px;">
+          <input type="text" id="regionTextInput" placeholder="VD: VN, VIP, PRO" class="input-text">
+        </div>
+      </div>
+
+      <div class="field-card">
+        <div class="card-subtitle">Thanh tua video (Progress Bar)</div>
+        <div class="seg-group">
+          <button type="button" class="seg-btn" data-val="default" id="barModeDefault">Mặc định</button>
+          <button type="button" class="seg-btn" data-val="gold" id="barModeGold">Màu Gold</button>
+          <button type="button" class="seg-btn" data-val="custom" id="barModeCustom">Tự chọn</button>
+        </div>
+
+        <!-- Hộp chọn màu tự chọn & nhập mã HEX -->
+        <div id="customProgressBarColorBox"
+          style="display: none; margin-top: 8px; padding-top: 6px; border-top: 1px solid #232328;">
+          <div class="row-flex" style="gap: 8px;">
+            <span style="font-size: 11.5px; color: #888890;">Bảng màu & HEX:</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <input type="color" id="progressBarColorPicker" value="#D7C08E"
+                style="border: none; width: 28px; height: 28px; border-radius: 6px; background: transparent; cursor: pointer; padding: 0;">
+              <input type="text" id="progressBarColorText" value="#D7C08E" placeholder="#RRGGBB" maxlength="7"
+                class="input-text"
+                style="width: 85px; padding: 3px 6px; font-size: 11.5px; font-weight: 700; text-transform: uppercase;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>

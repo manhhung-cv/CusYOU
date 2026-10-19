@@ -1,0 +1,278 @@
+/* ==========================================================================
+   CusYOU - popup.css (Monochrome Black & White + #D7C08E Accent)
+   ========================================================================== */
+* { box-sizing: border-box; }
+
+body {
+  width: 335px;
+  margin: 0;
+  padding: 12px;
+  background-color: #0d0d0e; /* Đen thuần tối giản */
+  color: #e0e0e0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  user-select: none;
+}
+
+.popup-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 2px 8px;
+  border-bottom: 1px solid #1f1f23;
+}
+
+.brand { display: flex; align-items: center; gap: 8px; }
+.brand-icon { width: 20px; height: 20px; }
+.brand-title { font-size: 15px; font-weight: 600; color: #ffffff; }
+.brand-title b { color: #D7C08E; } /* Điểm nhấn thương hiệu */
+
+.version-tag {
+  background: rgba(215, 192, 142, 0.12);
+  color: #D7C08E;
+  border: 1px solid rgba(215, 192, 142, 0.3);
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* Nav Tabs Đen Trắng */
+.nav-tabs {
+  display: flex;
+  background: #141417;
+  border-radius: 8px;
+  padding: 2px;
+  border: 1px solid #222226;
+}
+
+.nav-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #888890;
+  padding: 6px 0;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.nav-btn.active {
+  background: #202024;
+  color: #D7C08E; /* Điểm nhấn tab đang chọn */
+  font-weight: 600;
+}
+
+.tab-page {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 460px;
+  overflow-y: auto;
+}
+.tab-page.active { display: flex; }
+.tab-page::-webkit-scrollbar { width: 4px; }
+.tab-page::-webkit-scrollbar-thumb {
+  background: #2a2a30;
+  border-radius: 4px;
+}
+
+/* Card Khối chức năng */
+.field-card {
+  background: #141416;
+  border: 1px solid #232328;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-subtitle {
+  font-size: 10.5px;
+  color: #777780;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 4px;
+  padding: 2px 2px;
+}
+
+/* Switch Toggle */
+.switch-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 6px;
+  font-size: 12px;
+  color: #cccccc;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+.switch-item:hover { background: #1a1a1f; color: #ffffff; }
+
+.switch-item input[type="checkbox"] {
+  appearance: none;
+  width: 28px;
+  height: 16px;
+  background: #2b2b32;
+  border-radius: 20px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: 0.18s cubic-bezier(0.2, 0, 0, 1);
+  flex-shrink: 0;
+  margin: 0;
+}
+.switch-item input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-radius: 50%;
+  transition: 0.18s cubic-bezier(0.2, 0, 0, 1);
+}
+.switch-item input[type="checkbox"]:checked { background: #D7C08E; } /* Điểm nhấn khi bật */
+.switch-item input[type="checkbox"]:checked::after { left: 14px; background: #141416; }
+
+/* Segmented Buttons */
+.seg-group {
+  display: flex;
+  background: #0f0f12;
+  border: 1px solid #26262c;
+  border-radius: 6px;
+  padding: 2px;
+}
+.seg-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #888890;
+  padding: 5px 0;
+  font-size: 11px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.seg-btn.active { background: #222228; color: #D7C08E; font-weight: 600; }
+
+.upload-area {
+  display: block;
+  background: #101013;
+  border: 1px dashed #303038;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+  font-size: 11px;
+  color: #888890;
+  cursor: pointer;
+}
+.upload-area:hover { border-color: #D7C08E; color: #e0e0e0; }
+.upload-area input { display: none; }
+
+.row-flex { display: flex; justify-content: space-between; align-items: center; }
+
+.dropdown, .input-text {
+  background: #18181c;
+  border: 1px solid #2e2e36;
+  color: #f0f0f0;
+  padding: 4px 8px;
+  font-size: 11.5px;
+  border-radius: 6px;
+  outline: none;
+}
+.dropdown:focus, .input-text:focus { border-color: #D7C08E; }
+.input-text { width: 100%; text-align: center; font-weight: 600; }
+
+.btn-action {
+  background: #D7C08E;
+  color: #141416;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-action.btn-del {
+  background: #222228;
+  color: #aaaaaf;
+  border: 1px solid #33333b;
+}
+.btn-action.btn-del:hover { background: #b33939; color: #fff; border-color: #b33939; }
+
+.master-card {
+  background: #121214;
+  border: 1px solid rgba(215, 192, 142, 0.4); /* Điểm nhấn viền */
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+.master-title { font-size: 12px; font-weight: 600; color: #ffffff; }
+.master-desc { font-size: 10px; color: #888890; margin-top: 2px; }
+
+/* Accordion */
+.detail-accordion {
+  border: 1px solid #222227;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 6px;
+  background: #101012;
+}
+.accordion-trigger {
+  padding: 8px 12px;
+  font-size: 11.5px;
+  color: #aaaaaf;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+.accordion-trigger::-webkit-details-marker { display: none; }
+.chevron { width: 14px; height: 14px; fill: #666670; transition: transform 0.2s ease; }
+.detail-accordion[open] .chevron { transform: rotate(180deg); fill: #D7C08E; }
+.child-group { border: none !important; background: transparent !important; padding: 4px 8px 8px !important; border-top: 1px solid #1a1a1f !important; }
+
+/* Volume Slider */
+.cusyou-slider-container { padding: 4px 2px; display: flex; flex-direction: column; gap: 4px; }
+.cusyou-slider-label { display: flex; justify-content: space-between; font-size: 11.5px; color: #9999a0; }
+.cusyou-slider-label b { color: #D7C08E; font-size: 12.5px; }
+.cusyou-range-input { width: 100%; accent-color: #D7C08E; cursor: pointer; height: 4px; background: #26262e; border-radius: 4px; }
+
+/* 10-Band EQ Graphic */
+.eq-bars-container-10 {
+  display: flex;
+  justify-content: space-between;
+  background: #0f0f11;
+  padding: 10px 4px;
+  border-radius: 8px;
+  border: 1px solid #202026;
+  margin-top: 4px;
+}
+.eq-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+.eq-label { font-size: 8.5px; color: #777780; font-weight: 600; }
+.eq-slider {
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 4px;
+  height: 58px;
+  accent-color: #D7C08E;
+  cursor: pointer;
+  background: #25252c;
+  border-radius: 4px;
+}

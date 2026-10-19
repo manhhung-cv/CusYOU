@@ -1,0 +1,558 @@
+/* ==========================================================================
+   1. THANH TÌM KIẾM BOTTOM SPOTLIGHT CAPSULE (SPOTLIGHT DYNAMIC PILL)
+   ========================================================================== */
+html.cusyou-enable-bottom-search ytd-app {
+  --ytd-masthead-height: 0px !important;
+}
+
+/* Định vị Capsule nổi chính giữa đáy màn hình */
+html.cusyou-enable-bottom-search #masthead-container {
+  position: fixed !important;
+  top: auto !important;
+  bottom: 24px !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  width: auto !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  z-index: 2147483640 !important;
+  overflow: visible !important;
+  pointer-events: none !important; /* Tránh cản trở click ở vùng trống */
+}
+
+html.cusyou-enable-bottom-search ytd-masthead#masthead {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  height: auto !important;
+  pointer-events: auto !important;
+}
+
+html.cusyou-enable-bottom-search ytd-masthead #start,
+html.cusyou-enable-bottom-search ytd-masthead #end {
+  display: none !important;
+}
+
+html.cusyou-enable-bottom-search ytd-masthead #center {
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hộp Capsule chính: Bo tròn pill, kính mờ Glassmorphism, viền kim loại */
+html.cusyou-enable-bottom-search yt-searchbox,
+html.cusyou-enable-bottom-search ytd-searchbox {
+  display: flex !important;
+  align-items: center !important;
+  width: 280px !important;
+  height: 46px !important;
+  background: rgba(18, 18, 22, 0.88) !important;
+  backdrop-filter: blur(28px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+  border: 1px solid rgba(215, 192, 142, 0.28) !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7), 0 0 15px rgba(215, 192, 142, 0.08) !important;
+  box-sizing: border-box !important;
+  padding: 0 16px !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: text !important;
+}
+
+/* Khi hover hoặc click gõ: Mở rộng thanh lịch như Spotlight */
+html.cusyou-enable-bottom-search yt-searchbox:hover,
+html.cusyou-enable-bottom-search yt-searchbox:focus-within {
+  width: 480px !important;
+  max-width: 90vw !important;
+  background: rgba(14, 14, 17, 0.98) !important;
+  border-color: #D7C08E !important;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.85), 0 0 20px rgba(215, 192, 142, 0.25) !important;
+  transform: translateY(-2px);
+}
+
+/* Biểu tượng kính lúp ở đầu thanh tìm kiếm */
+html.cusyou-enable-bottom-search yt-searchbox::before,
+html.cusyou-enable-bottom-search ytd-searchbox::before {
+  content: "" !important;
+  display: inline-block !important;
+  width: 17px !important;
+  height: 17px !important;
+  margin-right: 10px !important;
+  flex-shrink: 0 !important;
+  background-color: #D7C08E !important;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'><circle cx='11' cy='11' r='8'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>") no-repeat center !important;
+  mask: url("data:image/svg+xml;utf8,<svg viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'><circle cx='11' cy='11' r='8'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>") no-repeat center !important;
+  transition: transform 0.2s ease;
+}
+
+html.cusyou-enable-bottom-search yt-searchbox:focus-within::before {
+  transform: scale(1.15);
+}
+
+html.cusyou-enable-bottom-search .ytSearchboxComponentInputWrapper,
+html.cusyou-enable-bottom-search .ytSearchboxComponentInputContainer,
+html.cusyou-enable-bottom-search .ytSearchboxComponentInputBox,
+html.cusyou-enable-bottom-search .ytSearchboxComponentSearchForm,
+html.cusyou-enable-bottom-search #search-form.ytd-searchbox,
+html.cusyou-enable-bottom-search #container.ytd-searchbox {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Ẩn các nút rườm rà thừa của YouTube */
+html.cusyou-enable-bottom-search .ytSearchboxComponentSearchButton,
+html.cusyou-enable-bottom-search #search-icon-legacy,
+html.cusyou-enable-bottom-search .ytSearchboxComponentInnerSearchIcon,
+html.cusyou-enable-bottom-search #search-icon,
+html.cusyou-enable-bottom-search .ytSearchboxComponentYtdTextInputAssistantWrapper,
+html.cusyou-enable-bottom-search .ytSearchboxComponentHiddenFileInput {
+  display: none !important;
+}
+
+/* Ô nhập chữ */
+html.cusyou-enable-bottom-search input.ytSearchboxComponentInput,
+html.cusyou-enable-bottom-search input#search {
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  color: #f7eee2 !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.3px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+html.cusyou-enable-bottom-search input.ytSearchboxComponentInput::placeholder,
+html.cusyou-enable-bottom-search input#search::placeholder {
+  color: rgba(215, 192, 142, 0.45) !important;
+}
+
+/* Khung gợi ý từ khóa hất ngược lên trên (Dropdown ngược) */
+html.cusyou-enable-bottom-search .ytSearchboxComponentSuggestionsContainer,
+html.cusyou-enable-bottom-search #i1[role="listbox"],
+html.cusyou-enable-bottom-search .sbsb_a {
+  position: absolute !important;
+  top: auto !important;
+  bottom: 58px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 480px !important;
+  max-width: 90vw !important;
+  max-height: 420px !important;
+  overflow-y: auto !important;
+  background: rgba(16, 16, 19, 0.96) !important;
+  backdrop-filter: blur(32px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
+  border: 1px solid rgba(215, 192, 142, 0.35) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 -16px 50px rgba(0, 0, 0, 0.85), 0 0 25px rgba(215, 192, 142, 0.12) !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+  z-index: 2147483647 !important;
+  animation: cusyouCapsuleDropUp 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+@keyframes cusyouCapsuleDropUp {
+  from { opacity: 0; transform: translate(-50%, 8px) scale(0.98); }
+  to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+}
+
+/* Từng dòng gợi ý tìm kiếm */
+html.cusyou-enable-bottom-search .ytSuggestionComponentSuggestion {
+  padding: 0 14px !important;
+  border-radius: 12px !important;
+  margin: 3px 0 !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+html.cusyou-enable-bottom-search .ytSuggestionComponentSuggestion:hover {
+  background: rgba(215, 192, 142, 0.14) !important;
+  transform: translateX(4px);
+}
+
+html.cusyou-enable-bottom-search .ytSuggestionComponentText { 
+  color: #e5d9c8 !important; 
+  font-size: 13.5px !important; 
+}
+html.cusyou-enable-bottom-search .ytSuggestionComponentBold { 
+  color: #D7C08E !important; 
+  font-weight: 700 !important; 
+}
+html.cusyou-enable-bottom-search .ytSuggestionComponentIcon svg { 
+  fill: #D7C08E !important; 
+  width: 17px !important; 
+  height: 17px !important; 
+}
+html.cusyou-enable-bottom-search .ytSuggestionComponentVisualSuggestThumbnail { 
+  border-radius: 8px !important; 
+}
+html.cusyou-enable-bottom-search .ytSearchboxComponentSuggestionsContainerFooter,
+html.cusyou-enable-bottom-search .ytSearchboxComponentReportButton { 
+  display: none !important; 
+}
+/* --------------------------------------------------------------------------
+   2. HEADER & CONTENT (ẨN THEO LỰA CHỌN)
+   -------------------------------------------------------------------------- */
+html.cusyou-hide-header #masthead-container,
+html.cusyou-hide-header ytd-masthead { display: none !important; }
+html.cusyou-hide-voice-search #voice-search-button { display: none !important; }
+html.cusyou-hide-header-create ytd-masthead #buttons ytd-button-renderer:has(button[aria-label*="Tạo"]),
+html.cusyou-hide-header-create ytd-masthead #buttons ytd-button-renderer:has(button[aria-label*="Create"]),
+html.cusyou-hide-header-create ytd-masthead #buttons ytd-button-renderer:has(path[d*="M12 3a1 1 0 00-1 1v7H4"]) { display: none !important; }
+html.cusyou-hide-header-notifications ytd-masthead #buttons ytd-notification-topbar-button-renderer { display: none !important; }
+html.cusyou-hide-header-avatar ytd-masthead #buttons #avatar-btn,
+html.cusyou-hide-header-avatar ytd-masthead #buttons ytd-topbar-menu-button-renderer { display: none !important; }
+
+html.cusyou-hide-channel-avatar #above-the-fold #top-row #avatar,
+html.cusyou-hide-channel-avatar #above-the-fold #owner yt-img-shadow#avatar,
+html.cusyou-hide-channel-avatar ytd-watch-metadata #owner yt-img-shadow,
+html.cusyou-hide-channel-avatar ytd-video-owner-renderer #avatar {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+}
+
+html.cusyou-hide-channel-name #above-the-fold #upload-info ytd-channel-name,
+html.cusyou-hide-channel-name #above-the-fold #owner #channel-name,
+html.cusyou-hide-channel-name ytd-watch-metadata #owner ytd-channel-name,
+html.cusyou-hide-channel-name ytd-video-owner-renderer ytd-channel-name {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+html.cusyou-hide-channel-sub-count #above-the-fold #owner #owner-sub-count,
+html.cusyou-hide-channel-sub-count ytd-watch-metadata #owner #owner-sub-count,
+html.cusyou-hide-channel-sub-count ytd-video-owner-renderer #owner-sub-count {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+html.cusyou-hide-btn-join #sponsor-button,
+html.cusyou-hide-btn-join ytd-button-renderer:has(a[href*="/join"]),
+html.cusyou-hide-btn-join ytd-watch-metadata #sponsor-button { display: none !important; }
+
+html.cusyou-hide-btn-subscribe #subscribe-button,
+html.cusyou-hide-btn-subscribe ytd-subscribe-button-renderer,
+html.cusyou-hide-btn-subscribe ytd-watch-metadata #subscribe-button { display: none !important; }
+
+html.cusyou-hide-btn-like ytd-watch-metadata like-button-view-model,
+html.cusyou-hide-btn-like ytd-watch-metadata segmented-like-dislike-button-view-model { display: none !important; }
+
+html.cusyou-hide-btn-thanks ytd-watch-metadata #flexible-item-buttons yt-button-view-model:has(button[aria-label*="Cảm ơn"]),
+html.cusyou-hide-btn-thanks ytd-watch-metadata #flexible-item-buttons yt-button-view-model:has(button[aria-label*="Thanks"]),
+html.cusyou-hide-btn-thanks ytd-watch-metadata #flexible-item-buttons yt-button-view-model:has(button[aria-label*="Super Thanks"]),
+html.cusyou-hide-btn-thanks ytd-watch-metadata yt-button-view-model:has(button[aria-label*="Cảm ơn"]),
+html.cusyou-hide-btn-thanks ytd-watch-metadata yt-button-view-model:has(button[aria-label*="Thanks"]) { display: none !important; }
+
+html.cusyou-hide-btn-share ytd-watch-metadata share-button-view-model,
+html.cusyou-hide-btn-share ytd-watch-metadata yt-button-view-model:has(button[aria-label*="Chia sẻ"]),
+html.cusyou-hide-btn-share ytd-watch-metadata yt-button-view-model:has(button[aria-label*="Share"]) { display: none !important; }
+
+html.cusyou-hide-btn-ask ytd-watch-metadata #flexible-item-buttons yt-button-view-model:has(.you-chat-entrypoint-button),
+html.cusyou-hide-btn-ask ytd-watch-metadata #flexible-item-buttons yt-button-view-model:has(button[aria-label*="Đặt câu hỏi"]),
+html.cusyou-hide-btn-ask ytd-watch-metadata #flexible-item-buttons yt-button-view-model:has(button[aria-label*="Ask"]) { display: none !important; }
+
+html.cusyou-hide-btn-save ytd-watch-metadata #flexible-item-buttons yt-button-view-model:has(button[aria-label*="Lưu"]),
+html.cusyou-hide-btn-save ytd-watch-metadata #flexible-item-buttons yt-button-view-model:has(button[aria-label*="Save"]) { display: none !important; }
+
+html.cusyou-hide-btn-more ytd-watch-metadata #top-level-buttons-computed + #button-shape,
+html.cusyou-hide-btn-more ytd-watch-metadata ytd-menu-renderer > yt-icon-button#button,
+html.cusyou-hide-btn-more ytd-watch-metadata ytd-menu-renderer > yt-button-shape#button-shape,
+html.cusyou-hide-btn-more ytd-watch-metadata ytd-menu-renderer yt-button-shape:has(button[aria-label*="Thao tác khác"]),
+html.cusyou-hide-btn-more ytd-watch-metadata ytd-menu-renderer yt-button-shape:has(button[aria-label*="More actions"]) { display: none !important; }
+
+html.cusyou-hide-title #above-the-fold #title,
+html.cusyou-hide-title ytd-watch-metadata #title,
+html.cusyou-hide-title ytd-watch-metadata h1 { display: none !important; }
+
+html.cusyou-hide-description #description,
+html.cusyou-hide-description ytd-watch-metadata #description-inner { display: none !important; }
+
+html.cusyou-hide-comments ytd-comments#comments { display: none !important; }
+html.cusyou-hide-related #secondary { display: none !important; }
+html.cusyou-hide-related-playlists #secondary ytd-compact-radio-renderer,
+html.cusyou-hide-related-playlists #secondary ytd-compact-playlist-renderer,
+html.cusyou-hide-related-playlists #secondary ytd-playlist-panel-renderer { display: none !important; }
+
+/* Ẩn Endscreen */
+html.cusyou-hide-endscreen .ytp-ce-element,
+html.cusyou-hide-endscreen .ytp-ce-video,
+html.cusyou-hide-endscreen .ytp-ce-playlist,
+html.cusyou-hide-endscreen .ytp-ce-channel,
+html.cusyou-hide-endscreen .ytp-ce-covering-overlay,
+html.cusyou-hide-endscreen .ytp-ce-element-show,
+html.cusyou-hide-endscreen .ytp-cards-teaser,
+html.cusyou-hide-endscreen .ytp-cards-button {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. CHẾ ĐỘ TIẾT KIỆM: ẨN TOÀN BỘ ẢNH (KỂ CẢ ĐỀ XUẤT), BẢO VỆ LOGO
+   -------------------------------------------------------------------------- */
+html.cusyou-audio-saver #secondary ytd-thumbnail *,
+html.cusyou-audio-saver #secondary yt-image *,
+html.cusyou-audio-saver ytd-compact-video-renderer ytd-thumbnail *,
+html.cusyou-audio-saver ytd-thumbnail img,
+html.cusyou-audio-saver ytd-playlist-thumbnail img,
+html.cusyou-audio-saver yt-img-shadow:not(#logo-icon):not(.cusyou-keep),
+html.cusyou-audio-saver ytd-channel-avatar-renderer img,
+html.cusyou-audio-saver #avatar img,
+html.cusyou-audio-saver ytd-moving-thumbnail-renderer,
+html.cusyou-audio-saver .ytp-cued-thumbnail-overlay {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  background-image: none !important;
+}
+
+/* Giữ khung hình chữ nhật tối giản cho thumbnail đề xuất bên phải để không vỡ bố cục text */
+html.cusyou-audio-saver #secondary ytd-thumbnail,
+html.cusyou-audio-saver ytd-compact-video-renderer ytd-thumbnail,
+html.cusyou-audio-saver ytd-thumbnail {
+  background-color: #121214 !important;
+  border: 1px dashed #26262c !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. CHẾ ĐỘ NÂNG CAO: THAY TOÀN BỘ THUMBNAIL (CẢ ĐỀ XUẤT) BẰNG LOGO
+   -------------------------------------------------------------------------- */
+html.cusyou-audio-advanced ytd-thumbnail,
+html.cusyou-audio-advanced ytd-playlist-thumbnail,
+html.cusyou-audio-advanced ytd-compact-video-renderer ytd-thumbnail,
+html.cusyou-audio-advanced #secondary ytd-thumbnail,
+html.cusyou-audio-advanced #thumbnail.ytd-thumbnail {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #141417 !important;
+}
+
+html.cusyou-audio-advanced ytd-thumbnail img,
+html.cusyou-audio-advanced ytd-compact-video-renderer img,
+html.cusyou-audio-advanced #secondary img,
+html.cusyou-audio-advanced yt-image img {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.cusyou-thumb-replacement {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #141416 !important;
+  border: 1px solid #222228 !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+.cusyou-thumb-replacement svg {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. AUDIO MODE DISPLAY IN PLAYER
+   -------------------------------------------------------------------------- */
+html.cusyou-audio-active #movie_player video.html5-main-video {
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+#cusyou-audio-backdrop {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+  background-color: #0b0b0d;
+}
+
+.cusyou-brand-display {
+  background: #121215;
+  border: 1px solid rgba(215, 192, 142, 0.35);
+  border-radius: 14px;
+  padding: 20px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+  animation: cusyouBrandPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cusyouBrandPop {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.cusyou-brand-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.cusyou-brand-name b { color: #D7C08E; }
+
+.cusyou-mode-badge {
+  background: rgba(215, 192, 142, 0.1);
+  color: #D7C08E;
+  border: 1px solid rgba(215, 192, 142, 0.3);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   6. NÚT IN-PLAYER & QUICK PANEL
+   -------------------------------------------------------------------------- */
+.ytp-button.cusyou-player-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 36px;
+  height: 100%;
+  vertical-align: top;
+  opacity: 0.85;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.ytp-button.cusyou-player-btn:hover { opacity: 1; transform: scale(1.08); }
+.ytp-button.cusyou-player-btn svg { width: 20px; height: 20px; }
+
+#cusyou-quick-panel {
+  position: absolute;
+  bottom: 56px;
+  right: 14px;
+  width: 335px;
+  background: #0f0f11;
+  border: 1px solid #282830;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+  z-index: 2147483647;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #cccccc;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.cusyou-panel-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.cusyou-panel-title { font-size: 13px; font-weight: 600; color: #ffffff; }
+.cusyou-panel-title b { color: #D7C08E; }
+.cusyou-panel-close {
+  background: #1a1a20;
+  border: 1px solid #2a2a34;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888890;
+  cursor: pointer;
+}
+.cusyou-panel-close:hover { color: #ffffff; border-color: #D7C08E; }
+
+.cusyou-tab-bar { display: flex; background: #161619; border-radius: 6px; padding: 2px; margin-bottom: 8px; border: 1px solid #24242a; }
+.cusyou-tab-btn { flex: 1; background: transparent; border: none; color: #777780; padding: 5px 0; font-size: 10.5px; font-weight: 600; border-radius: 5px; cursor: pointer; }
+.cusyou-tab-btn.active { background: #222228; color: #D7C08E; }
+
+.cusyou-tab-pane { display: none; flex-direction: column; gap: 4px; max-height: 310px; overflow-y: auto; }
+.cusyou-tab-pane.active { display: flex; }
+.cusyou-tab-pane::-webkit-scrollbar { width: 4px; }
+.cusyou-tab-pane::-webkit-scrollbar-thumb { background: #26262e; border-radius: 4px; }
+
+.cusyou-card-box {
+  background: #141416;
+  border: 1px solid #222228;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cusyou-switch-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 4px; font-size: 11.5px; color: #cccccc; cursor: pointer; }
+.cusyou-switch-row:hover { background: #1a1a20; color: #ffffff; }
+.cusyou-switch-row input[type="checkbox"] { appearance: none; width: 28px; height: 16px; background: #282830; border-radius: 20px; outline: none; cursor: pointer; position: relative; margin: 0; flex-shrink: 0; }
+.cusyou-switch-row input[type="checkbox"]::after { content: ""; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; background: #fff; border-radius: 50%; }
+.cusyou-switch-row input[type="checkbox"]:checked { background: #D7C08E; }
+.cusyou-switch-row input[type="checkbox"]:checked::after { left: 14px; background: #121214; }
+
+/* ==========================================================================
+   CUSTOM THANH TUA VIDEO THEO CHUẨN DOM YOUTUBE (TĂNG ĐỘ ƯU TIÊN TUYỆT ĐỐI)
+   ========================================================================== */
+
+/* 1. KHI BẬT MÀU GOLD (#D7C08E) */
+html.cusyou-progressbar-gold #movie_player .ytp-play-progress,
+html.cusyou-progressbar-gold #movie_player .ytp-play-progress.ytp-swatch-background-color,
+html.cusyou-progressbar-gold #movie_player .ytp-scrubber-button,
+html.cusyou-progressbar-gold #movie_player .ytp-scrubber-button.ytp-swatch-background-color,
+html.cusyou-progressbar-gold #movie_player .ytp-swatch-background-color {
+  background-color: #D7C08E !important;
+  background: #D7C08E !important;
+}
+
+html.cusyou-progressbar-gold #movie_player .ytp-scrubber-button {
+  border-color: #D7C08E !important;
+  box-shadow: 0 0 10px rgba(215, 192, 142, 0.7) !important;
+}
+
+html.cusyou-progressbar-gold #movie_player .ytp-hover-progress,
+html.cusyou-progressbar-gold #movie_player .ytp-hover-progress-light {
+  background: rgba(215, 192, 142, 0.4) !important;
+}
+
+html.cusyou-progressbar-gold #movie_player .ytp-decorated-scrubber-button {
+  display: none !important;
+}
+
+
+/* 2. KHI BẬT MÀU CUSTOM CÁ NHÂN */
+html.cusyou-progressbar-custom #movie_player .ytp-play-progress,
+html.cusyou-progressbar-custom #movie_player .ytp-play-progress.ytp-swatch-background-color,
+html.cusyou-progressbar-custom #movie_player .ytp-scrubber-button,
+html.cusyou-progressbar-custom #movie_player .ytp-scrubber-button.ytp-swatch-background-color,
+html.cusyou-progressbar-custom #movie_player .ytp-swatch-background-color {
+  background-color: var(--cusyou-progress-color, #D7C08E) !important;
+  background: var(--cusyou-progress-color, #D7C08E) !important;
+}
+
+html.cusyou-progressbar-custom #movie_player .ytp-scrubber-button {
+  border-color: var(--cusyou-progress-color, #D7C08E) !important;
+  box-shadow: 0 0 10px var(--cusyou-progress-color, #D7C08E) !important;
+}
+
+html.cusyou-progressbar-custom #movie_player .ytp-hover-progress,
+html.cusyou-progressbar-custom #movie_player .ytp-hover-progress-light {
+  background: var(--cusyou-progress-color, #D7C08E) !important;
+  opacity: 0.4 !important;
+}
+
+html.cusyou-progressbar-custom #movie_player .ytp-decorated-scrubber-button {
+  display: none !important;
+}
