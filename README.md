@@ -4,8 +4,8 @@ Dành cho người dùng thông thường, không cần cài đặt Git hay dòn
 
 ### Bước 1: Tải bản đóng gói sẵn
 1. Truy cập vào mục **[Releases](https://github.com/manhhung-cv/CusYOU/releases/tag/CusYOU)** ở cột bên phải giao diện GitHub của dự án.
-2. Tìm phiên bản mới nhất (ví dụ: `v1.5.0`).
-3. Trong phần **Assets**, bấm tải tệp **`CusYOU-v1.5.0.zip`**.
+2. Tìm phiên bản mới nhất (ví dụ: `v1.0.0`).
+3. Trong phần **Assets**, bấm tải tệp **`CusYOU_1.0.0.zip`**.
 4. Giải nén tệp `.zip` vừa tải về vào một thư mục cố định trên máy tính (ví dụ: `D:\Extensions\CusYOU`).
    > *Lưu ý: Không xóa thư mục này sau khi cài đặt, vì trình duyệt sẽ đọc trực tiếp từ đây.*
 
